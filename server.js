@@ -37,7 +37,7 @@ app.get('/todos/:id', function(req, res){
             matchedTodo = todo;
         }
     });
-    if(matchedTodo === undefined) {
+    if(!matchedTodo) {
         res.status(404).send({ error: "boo:(" });
     } else {
         res.json(matchedTodo);
